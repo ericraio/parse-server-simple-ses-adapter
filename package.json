@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/ericraio/parse-server-simple-ses-adapter#readme",
   "dependencies": {
-    "node-ses": "^0.7.7"
+    "node-ses": "1.2.0"
   }
 }
