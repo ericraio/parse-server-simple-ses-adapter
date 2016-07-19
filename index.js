@@ -5,8 +5,12 @@ var SimpleSESAdapter = sesOptions => {
   if (!sesOptions || !sesOptions.apiKey || !sesOptions.apiSecret || !sesOptions.domain || !sesOptions.fromAddress) {
     throw 'SimpleSESAdapter requires an API Key, domain, and fromAddress.';
   }
-
-  var client = ses.createClient({ key: sesOptions.apiKey, secret: sesOptions.apiSecret });
+  
+  if(!sesOptions.amazon){
+    sesOptions.amazon = 'https://email.us-east-1.amazonaws.com'
+  }
+  
+  var client = ses.createClient({ key: sesOptions.apiKey, secret: sesOptions.apiSecret, amazon : sesOptions.amazon });
 
   var sendMail = mail => {
     var data = {
