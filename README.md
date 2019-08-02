@@ -33,7 +33,8 @@ var api = new ParseServer({
             apiKey: SES_ACCESS_KEY,                         // SES API Key
             apiSecret: SES_SECRET_KEY,                      // SES API Secret
             domain: 'aVerifiedDomain.com',                  // A verified domain in SES
-            amazon: 'https://email.us-east-1.amazonaws.com' // OPTIONAL: Defaults to us-east-1
+            amazon: 'https://email.us-east-1.amazonaws.com',// OPTIONAL: Defaults to us-east-1
+            format: 'html'                                  // OPTIONAL: 'html' (default) or 'text'
         }
     }
 });
