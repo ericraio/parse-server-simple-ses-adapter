@@ -27,7 +27,7 @@ var SimpleSESAdapter = sesOptions => {
 
     return new Promise((resolve, reject) => {
       client.sendEmail(data, function(err, body, res) {
-        if (typeof err !== 'undefined') {
+        if (typeof err !== 'undefined' && err) {
           console.log(err);
           reject(err);
         }
